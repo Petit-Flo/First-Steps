@@ -1,0 +1,78 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp9
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.WriteLine(SommeDesEntiers(1, 100));
+
+            List<double> listeDesDoubles = new List<double> { 1.2, 1.5, 2.5, 10.2 };
+
+            Console.WriteLine(MoyenneDeLaListe(listeDesDoubles));
+
+            Console.WriteLine(SommeDesEgauxDeUnACent(3, 5));
+        }
+
+        static int SommeDesEntiers(int x, int y)
+        {
+            int resultat = 0;
+            for (int i = x; i <= y; i++)
+            {
+                resultat += i;
+            }
+            return resultat;
+        }
+
+        static double MoyenneDeLaListe(List<double> liste)
+        {
+            double resultat = 0;
+            foreach (double nombre in liste)
+            {
+                resultat += nombre;
+            }
+            return resultat / liste.Count;
+        }
+
+        static int SommeDesEgauxDeUnACent(int n1, int n2)
+        {
+            int total = 0;
+            {
+                List<int> listeParn1 = new List<int>();
+                {
+                    int i = 0;
+                    while (i <= 100)
+                    {
+                        listeParn1.Add(i);
+                        i += n1;
+                    }
+                }
+
+                List<int> listeParn2 = new List<int>();
+                {
+                    int i = 0;
+                    while (i <= 100)
+                    {
+                        listeParn2.Add(i);
+                        i += n2;
+                    }
+                }
+
+                foreach (int nombre1 in listeParn1)
+                foreach (int nombre2 in listeParn2)
+
+                if (nombre1 == nombre2)
+                {
+                    int resultat = nombre1 + nombre2;
+                    total += resultat;
+                }
+                return total;
+            }
+        }
+    }
+}
